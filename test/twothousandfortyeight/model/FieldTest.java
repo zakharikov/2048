@@ -1,0 +1,31 @@
+package twothousandfortyeight.model;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+
+public class FieldTest {
+    @Test
+    public void getSize() throws Exception {
+
+        final int inputValue = 4;
+        final int expectedValue = inputValue;
+        final Field field = new Field (inputValue);
+        final int actualValue = field.getSize();
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void createBoard() throws Exception {
+
+        final int inputValue = 4;
+        final int expectedValue = inputValue;
+        final Field field = new Field (inputValue);
+        final int actualValue = field.getSize();
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+}
