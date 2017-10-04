@@ -21,9 +21,9 @@ public class FieldTest {
     public void createBoard() throws Exception {
 
         final int inputValue = 4;
-        final int expectedValue = inputValue;
+        final int [][] expectedValue = new int[4][4];
         final Field field = new Field (inputValue);
-        final int actualValue = field.getSize();
+        final int [][] actualValue = field.createBoard(4);
 
         assertEquals(expectedValue, actualValue);
     }
