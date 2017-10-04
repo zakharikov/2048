@@ -1,0 +1,7 @@
+package twothousandfortyeight.model;
+
+
+public class Digit {
+    final static int TWO = 2;
+    final static int FOUR = 4;
+}
