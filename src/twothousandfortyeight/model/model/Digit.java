@@ -1,4 +1,4 @@
-package twothousandfortyeight.model;
+package twothousandfortyeight.model.model;
 
 
 public class Digit {
