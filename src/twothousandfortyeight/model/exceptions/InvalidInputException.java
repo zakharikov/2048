@@ -1,4 +1,4 @@
-package twothousandfortyeight.model.model.exceptions;
+package twothousandfortyeight.model.exceptions;
 
 
 public class InvalidInputException extends TTFEException {
