@@ -1,4 +1,4 @@
-package twothousandfortyeight.model.model;
+package twothousandfortyeight.model;
 
 
 public class Score {
