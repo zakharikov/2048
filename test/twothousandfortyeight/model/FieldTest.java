@@ -25,7 +25,15 @@ public class FieldTest {
         final Field field = new Field (inputValue);
         final int [][] actualValue = field.createBoard(4);
 
-        assertEquals(expectedValue, actualValue);
+        assertArrayEquals(expectedValue, actualValue);
+//        System.out.println(inputValue);
+//
+//        for(int i = 0; i < expectedValue.length; i++) {
+//            for (int j = 0; j < expectedValue[i].length; j++) {
+//                System.out.print(expectedValue[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
     }
 
 }
