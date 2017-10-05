@@ -1,5 +1,9 @@
 package twothousandfortyeight.model;
 
+import twothousandfortyeight.view.View;
+import java.util.Random;
+import java.util.Scanner;
+
 
 public class Field {
 
@@ -15,9 +19,13 @@ public class Field {
         return size;
     }
 
-    public int[][] createBoard(int size) {
+    public int[][] createBoard() {
        digitArray = new int[size][size];
        return digitArray;
     }
+
+//    public int[][] putDigit(int[][] digitArray) {
+//
+//    }
 
 }
