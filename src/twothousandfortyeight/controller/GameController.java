@@ -1,5 +1,5 @@
 package twothousandfortyeight.controller;
 
 
-public class MoveController {
+public class GameController {
 }
