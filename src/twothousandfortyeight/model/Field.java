@@ -5,6 +5,8 @@ public class Field {
 
     public int size;
 
+    public int[][] digitArray;
+
     public Field(int size) {
         this.size = size;
     }
@@ -14,8 +16,8 @@ public class Field {
     }
 
     public int[][] createBoard(int size) {
-       int[][] i = new int[size][size];
-       return i;
+       digitArray = new int[size][size];
+       return digitArray;
     }
 
 }
