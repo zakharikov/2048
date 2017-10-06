@@ -10,5 +10,10 @@ public class Main {
         View view = new View();
         view.askForSize();
 
+        Field field = new Field(view.inputSize);
+        System.out.println(field);
+
+        view.printBoard(field);
+
     }
 }
