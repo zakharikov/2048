@@ -6,7 +6,7 @@ import twothousandfortyeight.model.Field;
 
 public class View {
 
-    int inputSize;
+    public int inputSize;
 
     public int askForSize() {
 
@@ -18,4 +18,13 @@ public class View {
         return inputSize;
     }
 
+    public void printBoard() {
+        Field field =
+        for(int i = 0; i < field.digitArray.length; i++) {
+            for (int j = 0; j < field.digitArray[i].length; j++) {
+                System.out.print(field.digitArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
