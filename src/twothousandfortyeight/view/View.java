@@ -33,8 +33,13 @@ public class View {
         System.out.println();
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j < field.digitArray[i].length; j++) {
+
                 if (field.digitArray[i][j] <= 9) {
-                    System.out.print("|  " + field.digitArray[i][j] + "   ");
+                    if (field.digitArray[i][j] == 0) {
+                        System.out.print("|      ");
+                    } else {
+                        System.out.print("|  " + field.digitArray[i][j] + "   ");
+                    }
                     if (j + 1 == inputSize) System.out.print("|");
                 }
                 else if (field.digitArray[i][j] <= 99) {
