@@ -22,5 +22,7 @@ public class LoseController {
             System.out.println("You lose! How could anyone be so stupid?");
             System.out.println();
         }
+
+
     }
 }
