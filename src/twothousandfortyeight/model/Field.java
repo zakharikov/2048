@@ -28,15 +28,20 @@ public class Field {
 //
 //    }
 
-    public void firstMove () {
+    public void generateDigit() {
 
         Random random = new Random();
         Digit digit = new Digit();
 
-        int horizontal = random.nextInt(this.digitArray.length);
-        int vertical = random.nextInt(this.digitArray.length);
+        int horizontal = random.nextInt(digitArray.length);
+        int vertical = random.nextInt(digitArray.length);
 
-        this.digitArray[horizontal][vertical] = digit.getDigit(random);
+        if (digitArray[horizontal][vertical] == 0) {
+            digitArray[horizontal][vertical] = digit.getDigit(random);
+        } else {
+            generateDigit();
+        }
+
     }
 
 }
