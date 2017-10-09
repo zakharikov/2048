@@ -19,14 +19,13 @@ public class View {
         return inputSize;
     }
 
-    public void printBoard() {
+    public void printBoard(Field field) {
 
         System.out.println();
-        Field field = new Field(inputSize);
-        field.createBoard();
+
 //        for(int h = 0; h < field.digitArray.length; h++) {
 //            for (int g = 0; g < field.digitArray[h].length; g++) {
-//                field.digitArray[h][g] = 512;
+//                field.digitArray[h][g] = 4096;
 //            }
 //        }
         printSeparator(inputSize);
