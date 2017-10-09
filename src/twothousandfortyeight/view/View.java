@@ -9,14 +9,15 @@ public class View {
 
     public int inputSize;
 
-    public int askForSize() {
+    public String inputDirection = "";
+
+    public void askForSize() {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите размер поля:");
         inputSize = sc.nextInt();
-        sc.close();
+//        sc.close();
         System.out.println("Вы выбрали размер поля: " + inputSize + " x " + inputSize);
-        return inputSize;
     }
 
     public void printBoard(Field field) {
@@ -69,5 +70,15 @@ public class View {
         for (int i = 0; i < boardSize; i++) {
             System.out.print("-------");
         } System.out.print("-");
+    }
+
+    public String askForDirection() {
+
+        Scanner sca = new Scanner(System.in);
+        System.out.println("Давай, ходи! (W - вверх, S - вниз, A - влево, D - вправо)");
+        inputDirection = sca.next();
+        sca.close();
+        System.out.println(inputDirection);
+        return inputDirection;
     }
 }
