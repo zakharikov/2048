@@ -20,15 +20,10 @@ public class View {
         System.out.println("Вы выбрали размер поля: " + inputSize + " x " + inputSize);
     }
 
-    public void printBoard(Field field) {
+    public Field printBoard(Field field) {
 
         System.out.println();
 
-//        for(int h = 0; h < field.digitArray.length; h++) {
-//            for (int g = 0; g < field.digitArray[h].length; g++) {
-//                field.digitArray[h][g] = 4096;
-//            }
-//        }
         printSeparator(inputSize);
         System.out.println();
         for(int i = 0; i < field.digitArray.length; i++) {
@@ -64,6 +59,7 @@ public class View {
             printSeparator(inputSize);
             System.out.println();
         }
+        return field;
     }
 
     void printSeparator(int boardSize) {
@@ -75,10 +71,19 @@ public class View {
     public String askForDirection() {
 
         Scanner sca = new Scanner(System.in);
-        System.out.println("Давай, ходи! (W - вверх, S - вниз, A - влево, D - вправо)");
+        System.out.println("Давай, ходи! (Юзай стрелки, блеать!)");
         inputDirection = sca.next();
         sca.close();
         System.out.println(inputDirection);
         return inputDirection;
+    }
+
+    public Field initializeBoard (Field field) {
+        for(int h = 0; h < field.digitArray.length; h++) {
+            for (int g = 0; g < field.digitArray[h].length; g++) {
+                field.digitArray[h][g] = 64;
+            }
+        }
+        return field;
     }
 }
