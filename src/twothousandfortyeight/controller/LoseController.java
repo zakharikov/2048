@@ -5,7 +5,7 @@ import twothousandfortyeight.model.Field;
 
 public class LoseController {
 
-    public void getLooser (Field field) {
+    public boolean getLooser (Field field) {
 
         int counter = 0;
 
@@ -19,8 +19,11 @@ public class LoseController {
 
         if (counter == field.digitArray.length * field.digitArray.length) {
             System.out.println();
-            System.out.println("You lose! How could anyone be so stupid?");
+            System.out.println("Ты проиграл, тупица!");
             System.out.println();
+            return true;
+        } else {
+            return false;
         }
 
 
