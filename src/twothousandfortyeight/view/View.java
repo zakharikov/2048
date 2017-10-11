@@ -71,7 +71,7 @@ public class View {
     public String askForDirection() {
 
         Scanner sca = new Scanner(System.in);
-        System.out.println("Давай, ходи! (Юзай стрелки, блеать!)");
+        System.out.println("Давай, ходи! (WASD - стрелки, блеать!)");
         inputDirection = sca.next();
         sca.close();
         System.out.println(inputDirection);
