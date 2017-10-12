@@ -3,6 +3,7 @@ package twothousandfortyeight.view;
 import java.util.Arrays;
 import java.util.Scanner;
 import twothousandfortyeight.model.Field;
+import twothousandfortyeight.controller.DirectionCalculatorController;
 
 
 public class View {
@@ -68,14 +69,19 @@ public class View {
         } System.out.print("-");
     }
 
-    public String askForDirection() {
+    public void askForDirection(DirectionCalculatorController dcc, Field field) {
 
         Scanner sca = new Scanner(System.in);
         System.out.println("Давай, ходи! (WASD - стрелки, блеать!)");
-        inputDirection = sca.next();
-        sca.close();
+        switch (sca.next()) {
+            case "w" : dcc.rightCalculator(field);
+            case "a" : dcc.upCalculator(field);
+            case "s" : dcc.leftCalculator(field);
+            case "d" : dcc.downCalculator(field);
+            default : System.out.println("Смотри куда жмешь!");
+        }
+//        sca.close();
         System.out.println(inputDirection);
-        return inputDirection;
     }
 
     public Field initializeBoard (Field field) {
