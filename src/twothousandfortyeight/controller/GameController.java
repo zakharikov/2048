@@ -17,13 +17,13 @@ public class GameController {
 //
 //    }
 
-    public void direction (View view, DirectionCalculatorController dcc, Field field) {
-        switch (view.askForDirection()) {
-            case "w": dcc.upCalculator(field);
-            case "a": dcc.leftCalculator(field);
-            case "s": dcc.downCalculator(field);
-            case "d": dcc.rightCalculator(field);
-        }
-    }
+//    public void direction (View view, DirectionCalculatorController dcc, Field field) {
+//        switch (view.askForDirection()) {
+//            case "w" : dcc.upCalculator(field);
+//            case "a" : dcc.leftCalculator(field);
+//            case "s" : dcc.downCalculator(field);
+//            case "d" : dcc.rightCalculator(field);
+//        }
+//    }
 
 }
