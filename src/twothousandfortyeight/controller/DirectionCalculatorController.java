@@ -159,6 +159,7 @@ public class DirectionCalculatorController {
                     if (field.digitArray[i][j] == field.digitArray[i][j + k]) {
                         field.digitArray[i][j] += field.digitArray[i][j + k];
                         field.digitArray[i][j + k] = 0;
+                        j++;
                     }
                 }
             }
@@ -181,6 +182,7 @@ public class DirectionCalculatorController {
                     if (field.digitArray[j][i] == field.digitArray[j + k][i]) {
                         field.digitArray[j][i] += field.digitArray[j + k][i];
                         field.digitArray[j + k][i] = 0;
+                        j++;
                     }
                 }
             }
@@ -200,9 +202,14 @@ public class DirectionCalculatorController {
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = cellIndex; j >= 1; j--) {
                 for (int k = 1; k <= j; k++) {
+//                    с этим надо что-то делать
+//                    if (field.digitArray[i][j] != field.digitArray[i][j - k]) {
+//                        j--;
+//                    }
                     if (field.digitArray[i][j] == field.digitArray[i][j - k]) {
                         field.digitArray[i][j] += field.digitArray[i][j - k];
                         field.digitArray[i][j - k] = 0;
+                        j--;
                     }
                 }
             }
@@ -225,6 +232,7 @@ public class DirectionCalculatorController {
                     if (field.digitArray[j][i] == field.digitArray[j - k][i]) {
                         field.digitArray[j][i] += field.digitArray[j - k][i];
                         field.digitArray[j - k][i] = 0;
+                        j--;
                     }
                 }
             }
