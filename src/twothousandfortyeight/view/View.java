@@ -84,12 +84,42 @@ public class View {
         System.out.println(inputDirection);
     }
 
-    public Field initializeBoard (Field field) {
+    public Field initializeBoardA (Field field) {
         for(int h = 0; h < field.digitArray.length; h++) {
             for (int g = 0; g < field.digitArray[h].length; g++) {
                 field.digitArray[h][g] = 64;
             }
         }
+        return field;
+    }
+
+    public Field initializeBoardB (Field field) {
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[g][0] = 16;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[g][1] = 8;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[g][2] = 4;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[g][3] = 2;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[g][4] = 2;
+        }
+
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[1][g] = 0;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[2][g] = 0;
+        }
+        for (int g = 0; g < field.digitArray.length; g++) {
+            field.digitArray[3][g] = 0;
+        }
+
         return field;
     }
 }
