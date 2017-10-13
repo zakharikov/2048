@@ -26,17 +26,43 @@ public class Main {
         view.askForSize();
         Field field = new Field(view.inputSize);
         field.createBoard();
+//        view.initializeBoardB(field);
         field.generateDigit();
         view.printBoard(field);
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+
 //        view.initializeBoard(field);
 //        view.printBoard(field);
 //        dcc.rightCalculator(field);
 //        view.printBoard(field);
-        while (wc.getWinnner(field) == false && lc.getLooser(field) == false) {
-            view.askForDirection(dcc, field);
-            field.generateDigit();
-            view.printBoard(field);
-        }
+//        while (wc.getWinnner(field) == false && lc.getLooser(field) == false) {
+//            view.askForDirection(dcc, field);
+//            field.generateDigit();
+//            view.printBoard(field);
+//        }
 
     }
 }
