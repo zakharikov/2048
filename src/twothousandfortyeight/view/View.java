@@ -110,15 +110,15 @@ public class View {
             field.digitArray[g][4] = 2;
         }
 
-        for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[1][g] = 0;
-        }
-        for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[2][g] = 0;
-        }
-        for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[3][g] = 0;
-        }
+//        for (int g = 0; g < field.digitArray.length; g++) {
+//            field.digitArray[1][g] = 0;
+//        }
+//        for (int g = 0; g < field.digitArray.length; g++) {
+//            field.digitArray[2][g] = 0;
+//        }
+//        for (int g = 0; g < field.digitArray.length; g++) {
+//            field.digitArray[3][g] = 0;
+//        }
 
         return field;
     }
