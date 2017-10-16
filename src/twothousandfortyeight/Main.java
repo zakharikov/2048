@@ -26,66 +26,61 @@ public class Main {
         view.askForSize();
         Field field = new Field(view.inputSize);
         field.createBoard();
-        view.initializeBoardB(field);
+//        view.initializeBoardB(field);
+        field.generateDigit();
+        view.printBoard(field);
+
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
         dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
         view.printBoard(field);
 
 
 
+
+
+
+
+
+
+
 //        dcc.altRightCalculator(field);
 //        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altUpCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altLeftCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altDownCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altRightCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altUpCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altLeftCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altDownCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altRightCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altUpCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altLeftCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altDownCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altRightCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altUpCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altLeftCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
-//        dcc.altDownCalculator(field);
-//        field.generateDigit();
-//        view.printBoard(field);
+
 
 
 
