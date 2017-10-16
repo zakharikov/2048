@@ -154,12 +154,20 @@ public class DirectionCalculatorController {
         int cellIndex = field.digitArray.length - 1;
 
         for(int i = 0; i < field.digitArray.length; i++) {
-            for (int j = 0; j < cellIndex; j++) {
-                for (int k = 1; k <= cellIndex - j; k++) {
-                    if (field.digitArray[i][j] == field.digitArray[i][j + k]) {
-                        field.digitArray[i][j] += field.digitArray[i][j + k];
-                        field.digitArray[i][j + k] = 0;
-                        j++;
+            for (int j = cellIndex; j >= 1; j--) {
+                for (int k = 1; k <= j; k++) {
+//                    с этим надо что-то делать
+                    if (field.digitArray[i][j] != field.digitArray[i][j - k]
+                            && field.digitArray[i][j] > 0
+                            && field.digitArray[i][j - k] > 0) {
+                        j--;
+                    }
+                    if (field.digitArray[i][j] == field.digitArray[i][j - k]
+                            && field.digitArray[i][j] > 0
+                            && field.digitArray[i][j - k] > 0) {
+                        field.digitArray[i][j] += field.digitArray[i][j - k];
+                        field.digitArray[i][j - k] = 0;
+                        j--;
                     }
                 }
             }
@@ -177,12 +185,19 @@ public class DirectionCalculatorController {
         int cellIndex = field.digitArray.length - 1;
 
         for(int i = 0; i < field.digitArray.length; i++) {
-            for (int j = 0; j < cellIndex; j++) {
-                for (int k = 1; k <= cellIndex - j; k++) {
-                    if (field.digitArray[j][i] == field.digitArray[j + k][i]) {
-                        field.digitArray[j][i] += field.digitArray[j + k][i];
-                        field.digitArray[j + k][i] = 0;
-                        j++;
+            for (int j = cellIndex; j >= 1; j--) {
+                for (int k = 1; k <= j; k++) {
+                    if (field.digitArray[j][i] != field.digitArray[j - k][i]
+                            && field.digitArray[j][i] > 0
+                            && field.digitArray[j - k][i] > 0) {
+                        j--;
+                    }
+                    if (field.digitArray[j][i] == field.digitArray[j - k][i]
+                            && field.digitArray[j][i] > 0
+                            && field.digitArray[j - k][i] > 0) {
+                        field.digitArray[j][i] += field.digitArray[j - k][i];
+                        field.digitArray[j - k][i] = 0;
+                        j--;
                     }
                 }
             }
@@ -202,11 +217,14 @@ public class DirectionCalculatorController {
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = cellIndex; j >= 1; j--) {
                 for (int k = 1; k <= j; k++) {
-//                    с этим надо что-то делать
-//                    if (field.digitArray[i][j] != field.digitArray[i][j - k]) {
-//                        j--;
-//                    }
-                    if (field.digitArray[i][j] == field.digitArray[i][j - k]) {
+                    if (field.digitArray[i][j] != field.digitArray[i][j - k]
+                            && field.digitArray[i][j] > 0
+                            && field.digitArray[i][j - k] > 0) {
+                        j--;
+                    }
+                    if (field.digitArray[i][j] == field.digitArray[i][j - k]
+                            && field.digitArray[i][j] > 0
+                            && field.digitArray[i][j - k] > 0) {
                         field.digitArray[i][j] += field.digitArray[i][j - k];
                         field.digitArray[i][j - k] = 0;
                         j--;
@@ -229,7 +247,14 @@ public class DirectionCalculatorController {
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = cellIndex; j >= 1; j--) {
                 for (int k = 1; k <= j; k++) {
-                    if (field.digitArray[j][i] == field.digitArray[j - k][i]) {
+                    if (field.digitArray[j][i] != field.digitArray[j - k][i]
+                            && field.digitArray[j][i] > 0
+                            && field.digitArray[j - k][i] > 0) {
+                        j--;
+                    }
+                    if (field.digitArray[j][i] == field.digitArray[j - k][i]
+                            && field.digitArray[j][i] > 0
+                            && field.digitArray[j - k][i] > 0) {
                         field.digitArray[j][i] += field.digitArray[j - k][i];
                         field.digitArray[j - k][i] = 0;
                         j--;
