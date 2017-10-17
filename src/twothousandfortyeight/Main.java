@@ -26,9 +26,14 @@ public class Main {
         view.askForSize();
         Field field = new Field(view.inputSize);
         field.createBoard();
+        field.generateDigit();
 //        view.initializeBoardB(field);
-        field.generateDigit();
         view.printBoard(field);
+
+//        System.out.println(field.digitArray[0][0]);
+//        System.out.println(field.digitArray[0][4]);
+//        System.out.println(field.digitArray[4][0]);
+//        System.out.println(field.digitArray[4][4]);
 
         dcc.altLeftCalculator(field);
         field.generateDigit();
@@ -69,18 +74,18 @@ public class Main {
         field.generateDigit();
         view.printBoard(field);
 
-
-
-
-
-
-
-
-
-
-//        dcc.altRightCalculator(field);
-//        field.generateDigit();
-
+        dcc.altLeftCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altUpCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altRightCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
+        dcc.altDownCalculator(field);
+        field.generateDigit();
+        view.printBoard(field);
 
 
 
