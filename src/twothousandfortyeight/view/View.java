@@ -95,25 +95,25 @@ public class View {
 
     public Field initializeBoardB (Field field) {
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][0] = 0;
+            field.digitArray[0][g] = 0;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][1] = 4;
+            field.digitArray[1][g] = 4;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][2] = 8;
+            field.digitArray[2][g] = 8;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][3] = 4;
+            field.digitArray[3][g] = 4;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][4] = 2;
+            field.digitArray[4][g] = 2;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][5] = 2;
+            field.digitArray[5][g] = 2;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[g][6] = 0;
+            field.digitArray[6][g] = 0;
         }
 
 //        for (int g = 0; g < field.digitArray.length; g++) {
@@ -126,6 +126,15 @@ public class View {
 //            field.digitArray[3][g] = 0;
 //        }
 
+        return field;
+    }
+
+    public Field initializeBoardC (Field field) {
+        for (int i = 0; i < field.digitArray.length; i++) {
+            for (int j = 0; j < field.digitArray[i].length; j++) {
+                field.digitArray[i][j] = i + j*2 + 1;
+            }
+        }
         return field;
     }
 }
