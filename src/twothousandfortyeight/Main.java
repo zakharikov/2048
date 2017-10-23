@@ -1,6 +1,7 @@
 package twothousandfortyeight;
 
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import twothousandfortyeight.controller.GameController;
 import twothousandfortyeight.controller.LoseController;
 import twothousandfortyeight.controller.WinController;
@@ -23,69 +24,54 @@ public class Main {
         LoseController lc = new LoseController();
         View view = new View();
 
+
+
         view.askForSize();
         Field field = new Field(view.inputSize);
         field.createBoard();
-        field.generateDigit();
 //        view.initializeBoardB(field);
+        field.generateDigit();
         view.printBoard(field);
+
+        while (wc.getWinnner(field) == false && lc.getLooser(field) == false) {
+
+            gc.generateAutoMove(dcc, field, view);
+            if (wc.getWinnner(field) == true) {
+                System.out.println("You win!");
+                return;
+            }
+            else if (lc.getLooser(field) == true) {
+                System.out.println("You lose!");
+                return;
+            }
+        }
+//        System.out.println("GAME OVER");
+
+
+
+
+
+
 
 //        System.out.println(field.digitArray[0][0]);
 //        System.out.println(field.digitArray[0][4]);
 //        System.out.println(field.digitArray[4][0]);
 //        System.out.println(field.digitArray[4][4]);
 
-        dcc.altLeftCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altUpCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altRightCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altDownCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
+//        dcc.altLeftCalculator(field);
+//        field.generateDigit();
+//        view.printBoard(field);
+//        dcc.altUpCalculator(field);
+//        field.generateDigit();
+//        view.printBoard(field);
+//        dcc.altRightCalculator(field);
+//        field.generateDigit();
+//        view.printBoard(field);
+//        dcc.altDownCalculator(field);
+//        field.generateDigit();
+//        view.printBoard(field);
 
-        dcc.altLeftCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altUpCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altRightCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altDownCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
 
-        dcc.altLeftCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altUpCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altRightCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altDownCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-
-        dcc.altLeftCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altUpCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altRightCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
-        dcc.altDownCalculator(field);
-        field.generateDigit();
-        view.printBoard(field);
 
 
 
@@ -101,4 +87,6 @@ public class Main {
 //        }
 
     }
+
+
 }
