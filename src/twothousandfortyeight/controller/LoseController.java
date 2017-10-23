@@ -18,9 +18,6 @@ public class LoseController {
         }
 
         if (counter == field.digitArray.length * field.digitArray.length) {
-            System.out.println();
-            System.out.println("Ты проиграл, тупица!");
-            System.out.println();
             return true;
         } else {
             return false;
