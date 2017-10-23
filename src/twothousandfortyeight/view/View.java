@@ -95,7 +95,7 @@ public class View {
 
     public Field initializeBoardB (Field field) {
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[0][g] = 0;
+            field.digitArray[0][g] = 1;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
             field.digitArray[1][g] = 4;
@@ -104,7 +104,7 @@ public class View {
             field.digitArray[2][g] = 8;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
-            field.digitArray[3][g] = 4;
+            field.digitArray[3][g] = 32;
         }
         for (int g = 0; g < field.digitArray.length; g++) {
             field.digitArray[4][g] = 2;
