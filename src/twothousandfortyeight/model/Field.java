@@ -38,8 +38,9 @@ public class Field {
 
         if (digitArray[horizontal][vertical] == 0) {
             digitArray[horizontal][vertical] = digit.getDigit(random);
-        } else {
-            generateDigit();
+        }
+ else {
+            return;
         }
 
     }
