@@ -2,20 +2,18 @@ package twothousandfortyeight;
 
 
 import com.sun.org.apache.xpath.internal.SourceTree;
-import twothousandfortyeight.controller.GameController;
-import twothousandfortyeight.controller.LoseController;
-import twothousandfortyeight.controller.WinController;
+import twothousandfortyeight.controller.*;
 import twothousandfortyeight.model.Digit;
 import twothousandfortyeight.model.Field;
 import twothousandfortyeight.view.View;
-import twothousandfortyeight.controller.DirectionCalculatorController;
 
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 //        Scanner sc = new Scanner(System.in);
         GameController gc = new GameController();
@@ -23,29 +21,41 @@ public class Main {
         WinController wc = new WinController();
         LoseController lc = new LoseController();
         View view = new View();
-
-
+        boolean w = false;
+        boolean l = false;
 
         view.askForSize();
         Field field = new Field(view.inputSize);
-        field.createBoard();
+        DigitGenerator dg = new DigitGenerator();
+        field.getBoard();
 //        view.initializeBoardB(field);
-        field.generateDigit();
+        dg.generateDigit(field);
         view.printBoard(field);
 
-        while (wc.getWinnner(field) == false && lc.getLooser(field) == false) {
+//        for (int i = 2_000_000_000; i > 0; i--)
+        while (wc.getWinner(field) == false && lc.getLooser(field) == false)
+        {
+//            gc.makeMove(dg, gc, dcc, field, view);
 
-            gc.generateAutoMove(dcc, field, view);
-            if (wc.getWinnner(field) == true) {
-                System.out.println("You win!");
+            gc.generateAutoMove(dcc, field);
+            dg.generateDigit(field);
+            view.printBoard(field);
+            w = wc.getWinner(field);
+//            System.out.println("winner = "+w);
+            l = lc.getLooser(field);
+//            System.out.println("loser = "+l);
+            if (l == true) {
+                System.out.println("You lose!");
+                System.out.println("GAME OVER");
                 return;
             }
-            else if (lc.getLooser(field) == true) {
-                System.out.println("You lose!");
+            if (w == true) {
+                System.out.println("You win!");
+                System.out.println("GAME OVER");
                 return;
             }
         }
-//        System.out.println("GAME OVER");
+
 
 
 

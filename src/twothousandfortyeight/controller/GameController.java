@@ -13,7 +13,7 @@ public class GameController {
 
     public int previousMove = 0;
 
-    public Field generateAutoMove (DirectionCalculatorController dcc, Field field, View view) {
+    public Field generateAutoMove (DirectionCalculatorController dcc, Field field) {
 
         Random r = new Random();
 
@@ -22,43 +22,43 @@ public class GameController {
             case 1:
                 if (dcc.leftAbility2Move(field)) {
                     dcc.leftCalculator(field);
-                    field.generateDigit();
-                    view.printBoard(field);
+                    System.out.println("left");
                     break;
                 } else {
-                    generateAutoMove(dcc, field, view);
+                    generateAutoMove(dcc, field);
                 }
             case 2:
                 if (dcc.upAbility2Move(field)) {
                     dcc.upCalculator(field);
-                    field.generateDigit();
-                    view.printBoard(field);
+                    System.out.println("up");
                     break;
                 } else {
-                    generateAutoMove(dcc, field, view);
+                    generateAutoMove(dcc, field);
                 }
             case 3:
                 if (dcc.rightAbility2Move(field)) {
                     dcc.rightCalculator(field);
-                    field.generateDigit();
-                    view.printBoard(field);
+                    System.out.println("right");
                     break;
                 } else {
-                    generateAutoMove(dcc, field, view);
+                    generateAutoMove(dcc, field);
                 }
             case 4:
                 if (dcc.downAbility2Move(field)) {
                     dcc.downCalculator(field);
-                    field.generateDigit();
-                    view.printBoard(field);
+                    System.out.println("down");
                     break;
-            } else {
-                generateAutoMove(dcc, field, view);
-            }
+                } else {
+                    generateAutoMove(dcc, field);
+                }
         }
         return field;
     }
-    public void autoPlay(WinController wc, LoseController lc, DirectionCalculatorController field, Field dcc, View view) {
+    public void makeMove(DigitGenerator dg, GameController gc, DirectionCalculatorController dcc, Field field, View view) {
+
+        gc.generateAutoMove(dcc, field);
+        dg.generateDigit(field);
+        view.printBoard(field);
 
 
     }

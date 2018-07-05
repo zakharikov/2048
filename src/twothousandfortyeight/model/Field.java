@@ -9,18 +9,20 @@ public class Field {
 
     public int size;
 
+    public int quaontity;
+
     public int[][] digitArray;
 
     public Field(int size) {
         this.size = size;
+        this.digitArray = new int[size][size];
     }
 
     public int getSize() {
         return size;
     }
 
-    public int[][] createBoard() {
-       digitArray = new int[size][size];
+    public int[][] getBoard() {
        return digitArray;
     }
 
@@ -28,21 +30,17 @@ public class Field {
 //
 //    }
 
-    public void generateDigit() {
-
-        Random random = new Random();
-        Digit digit = new Digit();
-
-        int horizontal = random.nextInt(digitArray.length);
-        int vertical = random.nextInt(digitArray.length);
-
-        if (digitArray[horizontal][vertical] == 0) {
-            digitArray[horizontal][vertical] = digit.getDigit(random);
-        }
- else {
-            return;
-        }
-
-    }
+//    public boolean ifFieldIsFull() {
+//        for (int i = 0; i < digitArray.length; i++) {
+//            for (int j = 0; j < digitArray.length; j++) {
+//                if (digitArray[i][j] != 0) {
+//                    quaontity++;
+//                }
+//            }
+//        }
+//        if (quaontity != size) {
+//            return true;
+//        } else { return false; }
+//    }
 
 }

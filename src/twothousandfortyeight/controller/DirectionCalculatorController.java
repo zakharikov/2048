@@ -212,7 +212,7 @@ public class DirectionCalculatorController {
                 }
             }
         }
-        exitPoint: for(int i = 0; i < field.digitArray.length; i++) {
+        exitPoint2: for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j <= field.digitArray[i].length; j++) {
                 for (int k = 1; k < field.digitArray.length - j; k++) {
 
@@ -220,7 +220,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j] != 0
                             && field.digitArray[i][j + k] != 0) {
                         x = true;
-                        break exitPoint;
+                        break exitPoint2;
                     }
                 }
             }
@@ -243,7 +243,7 @@ public class DirectionCalculatorController {
                 }
             }
         }
-        exitPoint: for(int i = 0; i < field.digitArray.length; i++) {
+        exitPoint2: for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j <= field.digitArray[i].length; j++) {
                 for (int k = 1; k < field.digitArray.length - j; k++) {
 
@@ -251,7 +251,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[j][i] != 0
                             && field.digitArray[j + k][i] != 0) {
                         x = true;
-                        break exitPoint;
+                        break exitPoint2;
                     }
                 }
             }
@@ -274,7 +274,7 @@ public class DirectionCalculatorController {
                 }
             }
         }
-        exitPoint: for(int i = 0; i < field.digitArray.length; i++) {
+        exitPoint2: for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = field.digitArray[i].length - 1; j >= 0; j--) {
                 for (int k = 1; k < j + 1; k++) {
 
@@ -282,7 +282,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j] != 0
                             && field.digitArray[i][j - k] != 0) {
                         x = true;
-                        break exitPoint;
+                        break exitPoint2;
                     }
                 }
             }
@@ -305,7 +305,7 @@ public class DirectionCalculatorController {
                 }
             }
         }
-        exitPoint: for(int i = 0; i < field.digitArray.length; i++) {
+        exitPoint2: for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = field.digitArray[i].length - 1; j >= 0; j--) {
                 for (int k = 1; k < j + 1; k++) {
 
@@ -313,7 +313,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[j][i] != 0
                             && field.digitArray[j - k][i] != 0) {
                         x = true;
-                        break exitPoint;
+                        break exitPoint2;
                     } else {
                         break;
                     }

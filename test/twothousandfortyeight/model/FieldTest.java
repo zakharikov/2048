@@ -23,7 +23,7 @@ public class FieldTest {
         final int inputValue = 4;
         final int [][] expectedValue = new int[4][4];
         final Field field = new Field (inputValue);
-        final int [][] actualValue = field.createBoard();
+        final int [][] actualValue = field.getBoard();
 
         assertArrayEquals(expectedValue, actualValue);
 //        System.out.println(inputValue);

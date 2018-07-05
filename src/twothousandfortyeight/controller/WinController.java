@@ -4,7 +4,7 @@ import twothousandfortyeight.model.Field;
 
 public class WinController {
 
-    public boolean getWinnner (Field field) {
+    public boolean getWinner (Field field) {
 
         boolean value = false;
 
@@ -12,8 +12,6 @@ public class WinController {
             for (int j = 0; j < field.digitArray[i].length; j++) {
                 if (field.digitArray[i][j] == 2048) {
                     value = true;
-                } else {
-                    value = false;
                 }
             }
         }
