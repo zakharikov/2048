@@ -12,23 +12,20 @@ public class DigitGenerator {
 
         Random random = new Random();
         Digit digit = new Digit();
-
+        int generated = digit.getDigit(random);
         int horizontal = random.nextInt(field.digitArray.length);
         int vertical = random.nextInt(field.digitArray.length);
 
-//        if (field.ifFieldIsFull()) {return field;}
+        if (!field.cellIsOccupied(horizontal, vertical)) {
 
-        if (field.digitArray[horizontal][vertical] == 0) {
-            field.digitArray[horizontal][vertical] = digit.getDigit(random);
+            field.digitArray[horizontal][vertical] = generated;
+            System.out.println("generated = " + generated);
 
-        } return field;
-//        else {
-//            generateDigit(field);
-//            return field;
-//        }
+        } else {
+            System.out.println("not generated");
+            generateDigit(field);
+        }
 
+        return field;
     }
-
-
-
 }

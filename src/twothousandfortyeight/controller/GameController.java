@@ -23,43 +23,40 @@ public class GameController {
                 if (dcc.leftAbility2Move(field)) {
                     dcc.leftCalculator(field);
                     System.out.println("left");
+                    previousMove++;
                     break;
                 } else {
-                    generateAutoMove(dcc, field);
+                    System.out.println("left - no move");
                 }
             case 2:
                 if (dcc.upAbility2Move(field)) {
                     dcc.upCalculator(field);
                     System.out.println("up");
+                    previousMove++;
                     break;
                 } else {
-                    generateAutoMove(dcc, field);
+                    System.out.println("up - no move");
                 }
             case 3:
                 if (dcc.rightAbility2Move(field)) {
                     dcc.rightCalculator(field);
                     System.out.println("right");
+                    previousMove++;
                     break;
                 } else {
-                    generateAutoMove(dcc, field);
+                    System.out.println("right - no move");
                 }
             case 4:
                 if (dcc.downAbility2Move(field)) {
                     dcc.downCalculator(field);
                     System.out.println("down");
+                    previousMove++;
                     break;
                 } else {
-                    generateAutoMove(dcc, field);
+                    System.out.println("down - no move");
                 }
         }
         return field;
     }
-    public void makeMove(DigitGenerator dg, GameController gc, DirectionCalculatorController dcc, Field field, View view) {
 
-        gc.generateAutoMove(dcc, field);
-        dg.generateDigit(field);
-        view.printBoard(field);
-
-
-    }
 }

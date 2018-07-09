@@ -8,7 +8,7 @@ public class Digit {
     final static int FOUR = 4;
 
     public int getDigit(Random r) {
-        if (r.nextInt() % 1756426 == 0) {
+        if (r.nextInt() % 7 == 0) {
             return FOUR;
         } else {
             return TWO;
