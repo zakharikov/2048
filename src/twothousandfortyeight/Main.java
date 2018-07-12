@@ -32,7 +32,7 @@ public class Main {
         while (!wc.getWinner(field) && !lc.getLooser(field)) {
 
             if (field.moveIsAvailable()) {
-                gc.generateAutoMove(dcc, field);
+                view.askForDirection(dcc, field, gc);
             }
 
             if (gc.ifMoveIsMade() && field.ifThereAnyFreeCells()) {

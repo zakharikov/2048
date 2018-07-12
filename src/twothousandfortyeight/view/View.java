@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import twothousandfortyeight.model.Field;
 import twothousandfortyeight.controller.DirectionCalculatorController;
+import twothousandfortyeight.controller.GameController;
 
 
 public class View {
@@ -19,6 +20,21 @@ public class View {
         inputSize = sc.nextInt();
 //        sc.close();
         System.out.println("Вы выбрали размер поля: " + inputSize + " x " + inputSize);
+    }
+
+    public void askForDirection(DirectionCalculatorController dcc, Field field, GameController gc) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Давай, ходи! (WASD - стрелки, блеать!)");
+        switch (sc.next()) {
+            case "w" : gc.moveUp(dcc, field); break;
+            case "a" : gc.moveLeft(dcc, field); break;
+            case "s" : gc.moveDown(dcc, field); break;
+            case "d" : gc.moveRight(dcc, field); break;
+            default : System.out.println("Смотри куда жмешь!"); break;
+        }
+//        sca.close();
+//        System.out.println(inputDirection);
     }
 
     public Field printBoard(Field field) {
@@ -69,21 +85,6 @@ public class View {
         } System.out.print("-");
     }
 
-    public void askForDirection(DirectionCalculatorController dcc, Field field) {
-
-        Scanner sca = new Scanner(System.in);
-        System.out.println("Давай, ходи! (WASD - стрелки, блеать!)");
-        switch (sca.next()) {
-            case "w" : dcc.rightCalculator(field);
-            case "a" : dcc.upCalculator(field);
-            case "s" : dcc.leftCalculator(field);
-            case "d" : dcc.downCalculator(field);
-            default : System.out.println("Смотри куда жмешь!");
-        }
-//        sca.close();
-        System.out.println(inputDirection);
-    }
-
     public Field initializeBoardA (Field field) {
         for(int h = 0; h < field.digitArray.length; h++) {
             for (int g = 0; g < field.digitArray[h].length; g++) {
@@ -91,7 +92,7 @@ public class View {
             }
         }
         return field;
-    }
+    } // вспомогательный метод
 
     public Field initializeBoardB (Field field) {
         for (int g = 0; g < field.digitArray.length; g++) {
@@ -127,7 +128,7 @@ public class View {
 //        }
 
         return field;
-    }
+    } // вспомогательный метод
 
     public Field initializeBoardC (Field field) {
         for (int i = 0; i < field.digitArray.length; i++) {
@@ -136,5 +137,5 @@ public class View {
             }
         }
         return field;
-    }
+    } // вспомогательный метод
 }

@@ -68,4 +68,51 @@ public class GameController {
         else return false;
     }
 
+    public Field moveLeft (DirectionCalculatorController dcc, Field field) {
+
+        if (field.checkLeftAbility2Move()) {
+            dcc.leftCalculator(field);
+            System.out.println("left");
+            moveIsMade++;
+        } else {
+            System.out.println("left - no move");
+        }
+        return field;
+    }
+
+    public Field moveUp (DirectionCalculatorController dcc, Field field) {
+
+        if (field.checkUpAbility2Move()) {
+            dcc.upCalculator(field);
+            System.out.println("up");
+            moveIsMade++;
+        } else {
+            System.out.println("up - no move");
+        }
+        return field;
+    }
+
+    public Field moveRight (DirectionCalculatorController dcc, Field field) {
+
+        if (field.checkRightAbility2Move()) {
+            dcc.rightCalculator(field);
+            System.out.println("right");
+            moveIsMade++;
+        } else {
+            System.out.println("right - no move");
+        }
+        return field;
+    }
+
+    public Field moveDown (DirectionCalculatorController dcc, Field field) {
+
+        if (field.checkDownAbility2Move()) {
+            dcc.downCalculator(field);
+            System.out.println("down");
+            moveIsMade++;
+        } else {
+            System.out.println("down - no move");
+        }
+        return field;
+    }
 }
