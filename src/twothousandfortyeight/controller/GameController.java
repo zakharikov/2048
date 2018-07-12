@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 public class GameController {
 
-    public int previousMove = 0;
+    public int moveIsMade = 0;
 
     public Field generateAutoMove (DirectionCalculatorController dcc, Field field) {
 
@@ -20,43 +20,52 @@ public class GameController {
         switch (r.nextInt(4) + 1) {
 
             case 1:
-                if (dcc.leftAbility2Move(field)) {
+                if (field.checkLeftAbility2Move()) {
                     dcc.leftCalculator(field);
                     System.out.println("left");
-                    previousMove++;
+                    moveIsMade++;
                     break;
                 } else {
                     System.out.println("left - no move");
+                    break;
                 }
             case 2:
-                if (dcc.upAbility2Move(field)) {
+                if (field.checkUpAbility2Move()) {
                     dcc.upCalculator(field);
                     System.out.println("up");
-                    previousMove++;
+                    moveIsMade++;
                     break;
                 } else {
                     System.out.println("up - no move");
+                    break;
                 }
             case 3:
-                if (dcc.rightAbility2Move(field)) {
+                if (field.checkRightAbility2Move()) {
                     dcc.rightCalculator(field);
                     System.out.println("right");
-                    previousMove++;
+                    moveIsMade++;
                     break;
                 } else {
                     System.out.println("right - no move");
+                    break;
                 }
             case 4:
-                if (dcc.downAbility2Move(field)) {
+                if (field.checkDownAbility2Move()) {
                     dcc.downCalculator(field);
                     System.out.println("down");
-                    previousMove++;
+                    moveIsMade++;
                     break;
                 } else {
                     System.out.println("down - no move");
+                    break;
                 }
         }
         return field;
+    }
+
+    public boolean ifMoveIsMade () {
+        if (moveIsMade != 0) return true;
+        else return false;
     }
 
 }

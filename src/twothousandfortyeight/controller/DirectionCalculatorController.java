@@ -207,6 +207,7 @@ public class DirectionCalculatorController {
 
                     if (field.digitArray[i][j] == 0 && field.digitArray[i][j + k] != 0) {
                         x = true;
+                        System.out.println("можно двигать влево");
                         break exitPoint;
                     }
                 }
@@ -220,6 +221,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j] != 0
                             && field.digitArray[i][j + k] != 0) {
                         x = true;
+                        System.out.println("можно складывать влево");
                         break exitPoint2;
                     }
                 }
@@ -238,6 +240,7 @@ public class DirectionCalculatorController {
 
                     if (field.digitArray[j][i] == 0 && field.digitArray[j + k][i] != 0) {
                         x = true;
+                        System.out.println("можно двигать вверх");
                         break exitPoint;
                     }
                 }
@@ -251,6 +254,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[j][i] != 0
                             && field.digitArray[j + k][i] != 0) {
                         x = true;
+                        System.out.println("можно складывать вверх");
                         break exitPoint2;
                     }
                 }
@@ -269,6 +273,7 @@ public class DirectionCalculatorController {
 
                     if (field.digitArray[i][j] == 0 && field.digitArray[i][j - k] != 0) {
                         x = true;
+                        System.out.println("можно двигать вправо");
                         break exitPoint;
                     }
                 }
@@ -282,6 +287,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j] != 0
                             && field.digitArray[i][j - k] != 0) {
                         x = true;
+                        System.out.println("можно складывать вправо");
                         break exitPoint2;
                     }
                 }
@@ -300,6 +306,7 @@ public class DirectionCalculatorController {
 
                     if (field.digitArray[j][i] == 0 && field.digitArray[j - k][i] != 0) {
                         x = true;
+                        System.out.println("можно двигать вниз");
                         break exitPoint;
                     }
                 }
@@ -313,9 +320,8 @@ public class DirectionCalculatorController {
                             && field.digitArray[j][i] != 0
                             && field.digitArray[j - k][i] != 0) {
                         x = true;
+                        System.out.println("можно складывать вниз");
                         break exitPoint2;
-                    } else {
-                        break;
                     }
                 }
             }

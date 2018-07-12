@@ -6,12 +6,31 @@ import twothousandfortyeight.model.Field;
 public class LoseController {
 
     public boolean getLooser(Field field) {
-
-        int counter = 0;
-
-//        boolean ability = field.checkAllAbilities();
+//
+//        boolean bb = false;
+//
+//        if (field.ifThereAnyFreeCells()) {
+//            if (!this.ability2MoveWhenAllCellsAreOccupied(field)) {
+//                bb = true;
+//            }
+//        }
+//        return bb;
+//    }
 
         boolean b = false;
+
+//        if (field.ifThereAnyFreeCells()) {
+//            if (!field.ability2MoveWhenAllCellsAreOccupied()) {
+//                b = true;
+//            }
+//        }
+//
+//
+//
+//        return b;
+//    }
+
+        int counter = 0;
 
         for (int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j < field.digitArray[i].length; j++) {
@@ -27,15 +46,17 @@ public class LoseController {
 //        }
 
         if (counter == field.digitArray.length * field.digitArray.length) {
-            System.out.println("все ячейки заняты");
-            if (!field.checkAllAbilities()) {
-                System.out.println("ходить некуда!");
+            System.out.println("LoseController все ячейки заняты");
+            if (!field.moveIsAvailable()) {
                 b = true;
+                System.out.println("LoseController вернул true");
             } else {
-                System.out.println("есть возможность походить!");
+                b = false;
+                System.out.println("LoseController вернул false");
             }
         }
 
         return b;
     }
+
 }
