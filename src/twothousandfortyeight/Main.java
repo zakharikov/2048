@@ -41,6 +41,7 @@ public class Main {
             }
 
             view.printBoard(field);
+            dcc.showScore();
         }
 
         if (lc.getLooser(field)) {

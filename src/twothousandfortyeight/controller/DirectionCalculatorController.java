@@ -5,6 +5,8 @@ import twothousandfortyeight.model.Field;
 
 public class DirectionCalculatorController {
 
+    public int score = 0;
+
     private Field rightMover(Field field) {
 
         int cellIndex = field.digitArray.length - 1;
@@ -69,7 +71,7 @@ public class DirectionCalculatorController {
         return field;
     }
 
-    public Field leftCalculator (Field field) {
+    public Field leftCalculator(Field field) {
 
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j <= field.digitArray[i].length; j++) {
@@ -88,6 +90,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j + k] > 0) {
                         field.digitArray[i][j] += field.digitArray[i][j + k];
                         field.digitArray[i][j + k] = 0;
+                        score += field.digitArray[i][j];
                         break;
                     }
                 }
@@ -101,7 +104,7 @@ public class DirectionCalculatorController {
         return field;
     }
 
-    public Field upCalculator (Field field) {
+    public Field upCalculator(Field field) {
 
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = 0; j <= field.digitArray[i].length; j++) {
@@ -120,6 +123,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[j + k][i] > 0) {
                         field.digitArray[j][i] += field.digitArray[j + k][i];
                         field.digitArray[j + k][i] = 0;
+                        score += field.digitArray[j][i];
                         break;
                     }
                 }
@@ -133,7 +137,7 @@ public class DirectionCalculatorController {
         return field;
     }
 
-    public Field rightCalculator (Field field) {
+    public Field rightCalculator(Field field) {
 
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = field.digitArray[i].length - 1; j >= 0; j--) {
@@ -152,6 +156,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[i][j - k] > 0) {
                         field.digitArray[i][j] += field.digitArray[i][j - k];
                         field.digitArray[i][j - k] = 0;
+                        score += field.digitArray[i][j];
                         break;
                     }
                 }
@@ -165,7 +170,7 @@ public class DirectionCalculatorController {
         return field;
     }
 
-    public Field downCalculator (Field field) {
+    public Field downCalculator(Field field) {
 
         for(int i = 0; i < field.digitArray.length; i++) {
             for (int j = field.digitArray[i].length - 1; j >= 0; j--) {
@@ -184,6 +189,7 @@ public class DirectionCalculatorController {
                             && field.digitArray[j - k][i] > 0) {
                         field.digitArray[j][i] += field.digitArray[j - k][i];
                         field.digitArray[j - k][i] = 0;
+                        score += field.digitArray[j][i];
                         break;
                     }
                 }
@@ -197,7 +203,7 @@ public class DirectionCalculatorController {
         return field;
     }
 
-    public boolean leftAbility2Move (Field field) {
+    public boolean leftAbility2Move(Field field) {
 
         boolean x = false;
 
@@ -230,7 +236,7 @@ public class DirectionCalculatorController {
         return x;
     }
 
-    public boolean upAbility2Move (Field field) {
+    public boolean upAbility2Move(Field field) {
 
         boolean x = false;
 
@@ -263,7 +269,7 @@ public class DirectionCalculatorController {
         return x;
     }
 
-    public boolean rightAbility2Move (Field field) {
+    public boolean rightAbility2Move(Field field) {
 
         boolean x = false;
 
@@ -296,7 +302,7 @@ public class DirectionCalculatorController {
         return x;
     }
 
-    public boolean downAbility2Move (Field field) {
+    public boolean downAbility2Move(Field field) {
 
         boolean x = false;
 
@@ -327,6 +333,10 @@ public class DirectionCalculatorController {
             }
         }
         return x;
+    }
+
+    public void showScore() {
+        System.out.println("Score: " + score);
     }
 
 }
